@@ -13,6 +13,16 @@
     y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "x5ms141h8y");
 </script>
+<!-- ボタンクリック計測（LINE / ホットペッパー） -->
+<script type="text/javascript">
+document.addEventListener("pointerdown", function(e){
+    var a = e.target.closest && e.target.closest("a[href]");
+    if(!a || !window.clarity) return;
+    var h = a.href || "";
+    if(h.indexOf("lin.ee") > -1){ clarity("event","cta_line"); clarity("set","cta","line"); }
+    else if(h.indexOf("hotpepper") > -1){ clarity("event","cta_hotpepper"); clarity("set","cta","hotpepper"); }
+}, true);
+</script>
 <style>
 html{scroll-behavior:smooth}
 body{margin:0;background:#fdf8ec}
